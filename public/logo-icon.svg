@@ -1,0 +1,23 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="24" cy="24" r="24" fill="#1E4D7B"/>
+
+  <!-- Minare Base -->
+  <rect x="20" y="28" width="8" height="15" fill="#FFFFFF" rx="1"/>
+
+  <!-- Minare Middle -->
+  <rect x="21" y="23" width="6" height="5" fill="#FFFFFF" rx="0.5"/>
+
+  <!-- Minare Top -->
+  <rect x="22" y="18" width="4" height="5" fill="#FFFFFF" rx="0.5"/>
+
+  <!-- Minare Balcony -->
+  <path d="M 18 28 L 30 28 L 30 29 L 18 29 Z" fill="#C3A878"/>
+  <path d="M 19 23 L 29 23 L 29 24 L 19 24 Z" fill="#C3A878"/>
+
+  <!-- Crescent Moon -->
+  <path d="M 12 15 Q 8 15 8 11 Q 8 7 12 7 Q 10 9 10 11 Q 10 13 12 15 Z" fill="#C3A878"/>
+
+  <!-- Star -->
+  <path d="M 35 11 L 36 13 L 38 13 L 36.5 14.5 L 37 16.5 L 35 15.5 L 33 16.5 L 33.5 14.5 L 32 13 L 34 13 Z" fill="#C3A878"/>
+</svg>

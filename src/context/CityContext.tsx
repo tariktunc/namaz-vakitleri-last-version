@@ -31,22 +31,47 @@ export function CityProvider({ children }: { children: ReactNode }) {
     const initializeCity = async () => {
       try {
         setIsLoading(true);
+
+        // 1. Önce localStorage'dan kontrol et
+        const savedCity = localStorage.getItem('selectedCity');
+        const savedDisplayCity = localStorage.getItem('displayCity');
+
+        if (savedCity && savedDisplayCity) {
+          try {
+            const cityData = cityCoordinates[savedCity];
+            if (cityData) {
+              setSelectedCity(savedCity);
+              setDisplayCity(savedDisplayCity);
+              return;
+            }
+          } catch (error) {
+            console.warn('Kaydedilmiş şehir yüklenemedi:', error);
+          }
+        }
+
+        // 2. localStorage yoksa konum tespiti yap
         try {
           const detectedCity = await LocationDetector();
           const normalizedCity = getCityNameFromInput(detectedCity.toLowerCase());
           const cityData = cityCoordinates[normalizedCity];
-          
+
           if (cityData) {
             setSelectedCity(normalizedCity);
             setDisplayCity(cityData.name);
+            // İlk konum tespitinde kaydet
+            localStorage.setItem('selectedCity', normalizedCity);
+            localStorage.setItem('displayCity', cityData.name);
             return;
           }
         } catch (error) {
           console.warn('Konum tespit edilemedi:', error);
         }
 
+        // 3. Her ikisi de başarısız olursa İstanbul
         setSelectedCity('istanbul');
         setDisplayCity('İstanbul');
+        localStorage.setItem('selectedCity', 'istanbul');
+        localStorage.setItem('displayCity', 'İstanbul');
       } catch (error) {
         console.error('Şehir başlatma hatası:', error);
         setSelectedCity('istanbul');
@@ -61,6 +86,14 @@ export function CityProvider({ children }: { children: ReactNode }) {
 
   const handleSetSelectedCity = (city: string) => {
     setSelectedCity(city);
+    // localStorage'a kaydet
+    localStorage.setItem('selectedCity', city);
+    // Display city'yi de güncelle ve kaydet
+    const cityData = cityCoordinates[city];
+    if (cityData) {
+      setDisplayCity(cityData.name);
+      localStorage.setItem('displayCity', cityData.name);
+    }
   };
 
   if (!isMounted) {

@@ -7,21 +7,63 @@ export interface PrayerTimes {
   yatsi: string;
 }
 
-export interface Place {
-  countryCode: string;
-  country: string;
-  region: string;
-  city: string;
-  latitude: number;
-  longitude: number;
+// Aladhan API Response Types
+export interface AladhanTimings {
+  Fajr: string;
+  Sunrise: string;
+  Dhuhr: string;
+  Asr: string;
+  Sunset: string;
+  Maghrib: string;
+  Isha: string;
+  Imsak: string;
+  Midnight: string;
+  Firstthird: string;
+  Lastthird: string;
 }
 
-export interface ApiResponse {
-  place: Place;
-  times: {
-    [date: string]: string[];
+export interface AladhanDate {
+  readable: string;
+  timestamp: string;
+  hijri: {
+    date: string;
+    day: string;
+    month: {
+      number: number;
+      en: string;
+      ar: string;
+    };
+    year: string;
+  };
+  gregorian: {
+    date: string;
+    day: string;
+    month: {
+      number: number;
+      en: string;
+    };
+    year: string;
   };
 }
 
-// Boş bir export ekleyelim ki dosya modül olarak tanınsın
-export {} 
+export interface AladhanMeta {
+  latitude: number;
+  longitude: number;
+  timezone: string;
+  method: {
+    id: number;
+    name: string;
+  };
+}
+
+export interface AladhanData {
+  timings: AladhanTimings;
+  date: AladhanDate;
+  meta: AladhanMeta;
+}
+
+export interface AladhanApiResponse {
+  code: number;
+  status: string;
+  data: AladhanData;
+} 
