@@ -11,6 +11,9 @@ interface CityContextType {
   setDisplayCity: (city: string) => void;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
+  detectLocation: () => Promise<void>;
+  isDetecting: boolean;
+  locationError: string | null;
 }
 
 const CityContext = createContext<CityContextType | undefined>(undefined);
@@ -20,6 +23,8 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const [displayCity, setDisplayCity] = useState<string>('İstanbul');
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const [isDetecting, setIsDetecting] = useState<boolean>(false);
+  const [locationError, setLocationError] = useState<string | null>(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -96,16 +101,42 @@ export function CityProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  const detectLocation = async () => {
+    setIsDetecting(true);
+    setLocationError(null);
+    try {
+      const detectedCity = await LocationDetector();
+      const normalizedCity = getCityNameFromInput(detectedCity.toLowerCase());
+      const cityData = cityCoordinates[normalizedCity];
+
+      if (cityData) {
+        setSelectedCity(normalizedCity);
+        setDisplayCity(cityData.name);
+        localStorage.setItem('selectedCity', normalizedCity);
+        localStorage.setItem('displayCity', cityData.name);
+      } else {
+        setLocationError('Konumunuz Türkiye sınırları içinde tespit edilemedi');
+      }
+    } catch (error) {
+      setLocationError(typeof error === 'string' ? error : 'Konum tespit edilemedi');
+    } finally {
+      setIsDetecting(false);
+    }
+  };
+
   if (!isMounted) {
     return (
-      <CityContext.Provider 
+      <CityContext.Provider
         value={{
           selectedCity: 'istanbul',
           setSelectedCity: () => {},
           displayCity: 'İstanbul',
           setDisplayCity: () => {},
           isLoading: true,
-          setIsLoading: () => {}
+          setIsLoading: () => {},
+          detectLocation: async () => {},
+          isDetecting: false,
+          locationError: null
         }}
       >
         {children}
@@ -114,14 +145,17 @@ export function CityProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <CityContext.Provider 
+    <CityContext.Provider
       value={{
         selectedCity,
         setSelectedCity: handleSetSelectedCity,
         displayCity,
         setDisplayCity,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        detectLocation,
+        isDetecting,
+        locationError
       }}
     >
       {children}

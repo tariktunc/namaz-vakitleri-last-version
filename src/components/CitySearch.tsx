@@ -5,7 +5,7 @@ import { useCity } from '@/context/CityContext';
 import { getCityNameFromInput, cityCoordinates } from '@/utils/cities';
 
 export function CitySearch() {
-  const { selectedCity, setSelectedCity, displayCity, setDisplayCity, isLoading } = useCity();
+  const { selectedCity, setSelectedCity, displayCity, setDisplayCity, isLoading, detectLocation, isDetecting, locationError } = useCity();
   const [searchInput, setSearchInput] = useState(displayCity);
   const [suggestions, setSuggestions] = useState<Array<{ id: string; display: string }>>([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -132,6 +132,15 @@ export function CitySearch() {
     setIsBrowser(true);
   }, []);
 
+  const handleDetectLocation = async () => {
+    await detectLocation();
+    setSearchInput(displayCity);
+  };
+
+  useEffect(() => {
+    setSearchInput(displayCity);
+  }, [displayCity]);
+
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 sm:p-8 mb-4 sm:mb-8">
       <form onSubmit={handleSubmit} className="mb-6 sm:mb-8 relative">
@@ -145,23 +154,28 @@ export function CitySearch() {
               onFocus={handleFocus}
               placeholder="Şehir adı veya plaka kodu giriniz"
               className={`w-full p-2.5 sm:p-3 text-sm sm:text-base border ${
-                isInputError 
-                  ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                isInputError
+                  ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                   : 'border-[#8FB3D6] focus:ring-[#1E4D7B] focus:border-[#1E4D7B]'
               } rounded-lg focus:ring-2 text-[#2C3E50] placeholder-gray-400 transition-colors`}
               aria-invalid={isInputError}
               aria-describedby={errorMessage ? "error-message" : undefined}
             />
             {errorMessage && (
-              <p 
-                id="error-message" 
+              <p
+                id="error-message"
                 className="absolute -bottom-5 left-0 text-xs sm:text-sm text-red-600"
               >
                 {errorMessage}
               </p>
             )}
+            {locationError && (
+              <p className="absolute -bottom-5 left-0 text-xs sm:text-sm text-red-600">
+                {locationError}
+              </p>
+            )}
             {suggestions.length > 0 && isFocused && (
-              <div 
+              <div
                 ref={suggestionsRef}
                 className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto"
               >
@@ -178,17 +192,43 @@ export function CitySearch() {
               </div>
             )}
           </div>
-          <button
-            type="submit"
-            disabled={isLoading}
-            className={`w-full p-2.5 sm:p-3 text-sm sm:text-base bg-[#1E4D7B] text-white rounded-lg transition-colors ${
-              isLoading 
-                ? 'opacity-50 cursor-not-allowed' 
-                : 'hover:bg-[#1E4D7B]/90'
-            }`}
-          >
-            {isLoading ? 'Aranıyor...' : 'Ara'}
-          </button>
+          <div className="flex gap-2 sm:gap-3">
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`flex-1 p-2.5 sm:p-3 text-sm sm:text-base bg-[#1E4D7B] text-white rounded-lg transition-colors ${
+                isLoading
+                  ? 'opacity-50 cursor-not-allowed'
+                  : 'hover:bg-[#1E4D7B]/90'
+              }`}
+            >
+              {isLoading ? 'Aranıyor...' : 'Ara'}
+            </button>
+            <button
+              type="button"
+              onClick={handleDetectLocation}
+              disabled={isDetecting || isLoading}
+              className={`flex items-center gap-1.5 px-3 sm:px-4 p-2.5 sm:p-3 text-sm sm:text-base border-2 border-[#1E4D7B] text-[#1E4D7B] rounded-lg transition-colors ${
+                isDetecting || isLoading
+                  ? 'opacity-50 cursor-not-allowed'
+                  : 'hover:bg-[#1E4D7B] hover:text-white'
+              }`}
+              title="Konumumu Tespit Et"
+            >
+              {isDetecting ? (
+                <svg className="animate-spin h-4 w-4 sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              )}
+              <span className="hidden sm:inline">{isDetecting ? 'Tespit ediliyor...' : 'Konum'}</span>
+            </button>
+          </div>
         </div>
       </form>
 
