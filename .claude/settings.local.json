@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:halodigital.co)",
+      "WebFetch(domain:dribbble.com)",
+      "WebFetch(domain:www.kittl.com)",
+      "WebFetch(domain:www.muslimpro.com)",
+      "WebFetch(domain:namazvakitleri.com)",
+      "WebFetch(domain:www.yenisafak.com)",
+      "WebFetch(domain:kufranamazvakitleri.com)",
+      "Bash(npm run build)"
+    ]
+  }
+}
