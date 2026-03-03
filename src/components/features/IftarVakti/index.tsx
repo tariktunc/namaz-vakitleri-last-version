@@ -6,10 +6,9 @@ import { CountdownTimer } from '@/components/ui/CountdownTimer';
 import { getPrayerTimes } from '@/services/api';
 import type { PrayerTimes } from '@/types/prayer';
 import { useCity } from '@/context/CityContext';
-import { CitySearch } from '@/components/ui/CitySearch';
-import { Footer } from '@/components/ui/Footer';
+import { CitySearch } from '@/components/CitySearch';
 import { PrayerTimeCard } from './PrayerTimeCard';
-import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
+import { IftarPageSkeleton } from '@/components/ui/Skeleton';
 import { formatDate } from '@/utils/date';
 
 export function IftarVakti() {
@@ -31,7 +30,7 @@ export function IftarVakti() {
   }, [selectedCity, isMounted]);
 
   useEffect(() => {
-    document.title = isIftar 
+    document.title = isIftar
       ? 'İftar Vakitleri | Namaz ve İftar Vakitleri'
       : 'Sahur Vakitleri | Namaz ve İftar Vakitleri';
   }, [isIftar]);
@@ -53,53 +52,49 @@ export function IftarVakti() {
     const now = new Date();
     const aksam = new Date(`${now.toDateString()} ${times.aksam}`);
     const imsak = new Date(`${now.toDateString()} ${times.imsak}`);
-    
+
     setIsIftar(!(now > aksam || now < imsak));
   };
 
-  if (!isMounted) {
-    return <LoadingSpinner />;
+  // Henuz mount olmadi veya veri yukleniyor -> tam sayfa skeleton
+  if (!isMounted || isLoading) {
+    return <IftarPageSkeleton />;
+  }
+
+  if (!prayerTimes || !formattedDate) {
+    return null;
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#F5F7FA] to-[#8FB3D6]">
-      <main className="flex-grow">
-        <div className="max-w-2xl mx-auto px-4 py-4 sm:py-8">
-          <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center text-[#1E4D7B]">
-            {isIftar ? 'İftara Ne Kadar Kaldı?' : 'Sahura Ne Kadar Kaldı?'}
-          </h1>
+    <div className="page-container animate-fade-in">
+      <h1 className="page-title">
+        {isIftar ? 'İftara Ne Kadar Kaldı?' : 'Sahura Ne Kadar Kaldı?'}
+      </h1>
 
-          <CitySearch />
+      <CitySearch />
 
-          {isLoading ? (
-            <LoadingSpinner />
-          ) : prayerTimes && formattedDate && (
-            <div className="bg-white rounded-lg shadow-lg p-4 sm:p-8">
-              <div className="text-center space-y-2 mb-8">
-                <h2 className="text-2xl font-bold text-[#1E4D7B] capitalize">
-                  {displayCity}
-                </h2>
-                <p className="text-[#2C3E50] text-sm">
-                  {displayCity} ili için {formattedDate} tarihli vakitler
-                </p>
-              </div>
-
-              <CountdownTimer
-                targetTime={isIftar ? prayerTimes.aksam : prayerTimes.imsak}
-                onComplete={() => setIsIftar(!isIftar)}
-              />
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <PrayerTimeCard
-                  times={prayerTimes}
-                  isIftar={isIftar}
-                />
-              </div>
-            </div>
-          )}
+      <div className="content-card">
+        <div className="text-center space-y-2 mb-8">
+          <h2 className="text-2xl font-bold text-brand-primary capitalize">
+            {displayCity}
+          </h2>
+          <p className="text-neutral-600 text-sm">
+            {displayCity} ili için {formattedDate} tarihli vakitler
+          </p>
         </div>
-      </main>
-      <Footer />
+
+        <CountdownTimer
+          targetTime={isIftar ? prayerTimes.aksam : prayerTimes.imsak}
+          onComplete={() => setIsIftar(!isIftar)}
+        />
+
+        <div className="grid grid-cols-2 gap-4 mt-8">
+          <PrayerTimeCard
+            times={prayerTimes}
+            isIftar={isIftar}
+          />
+        </div>
+      </div>
     </div>
   );
-} 
+}

@@ -20,14 +20,14 @@ export function PrayerTimeCard({ times, isIftar }: PrayerTimeCardProps) {
       {prayers.map((prayer, idx) => (
         <div 
           key={idx} 
-          className={`flex justify-between p-4 bg-white rounded shadow-sm hover:shadow-md transition-shadow border-l-4 ${
+          className={`prayer-row ${
             (isIftar && prayer.label === 'Akşam') || (!isIftar && prayer.label === 'İmsak')
-              ? 'border-blue-500 bg-blue-50'
-              : 'border-[#C3A878]'
+              ? 'border-brand-gold bg-brand-gold-50'
+              : 'border-brand-primary-100'
           }`}
         >
-          <span className="font-medium text-[#1E4D7B]">{prayer.label}:</span>
-          <span className="text-[#2C3E50]">{prayer.value}</span>
+          <span className="font-medium text-brand-primary">{prayer.label}:</span>
+          <span className="text-neutral-800">{prayer.value}</span>
         </div>
       ))}
     </>

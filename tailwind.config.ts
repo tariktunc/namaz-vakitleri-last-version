@@ -13,35 +13,40 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
 
-        // Brand Colors - Primary
+        // Brand Colors - Emerald Green (Islamic Identity)
         brand: {
-          primary: '#1E4D7B',      // Deniz Mavisi
-          'primary-dark': '#163A5F', // Darker variant
-          'primary-light': '#2C5F96', // Lighter variant
-          sky: '#8FB3D6',           // Gök Mavisi
-          gold: '#C3A878',          // Altın Sarısı
-          navy: '#2C3E50',          // Koyu Lacivert
+          primary: '#1B7D5A',          // Derin Zümrüt
+          'primary-dark': '#15614A',   // Koyu Zümrüt (hover, footer bg)
+          'primary-light': '#22996E',  // Orta Zümrüt
+          'primary-50': '#E8F5EE',     // Fısıltı Yeşil (arka plan tonu)
+          'primary-100': '#C7E9D5',    // Yumuşak Nane
+          gold: '#D4A853',             // Zengin Altın
+          'gold-dark': '#B8912F',      // Koyu Altın (hover)
+          'gold-light': '#E8C97A',     // Yumuşak Altın
+          'gold-50': '#FDF6E3',        // Krem Altın (arka plan)
+          accent: '#1A3A4A',           // Gece Teal
+          'accent-light': '#2A5468',   // Okyanus
         },
 
-        // Neutral Colors
+        // Neutral Colors - Warm tones (not cold gray)
         neutral: {
-          50: '#F5F7FA',   // Açık Gri
-          100: '#E8ECEF',  // Orta Gri
-          200: '#D1D9E0',
-          300: '#B4BFC8',
-          400: '#8FA0AC',
-          500: '#6B7C8A',
-          600: '#546575',
-          700: '#3E4F5E',
-          800: '#2C3E50',  // Metin Gri (dark navy)
-          900: '#1A2632',
+          50: '#FAFAF6',    // Sıcak Beyaz
+          100: '#F0EDE5',   // Parşömen
+          200: '#E0DCD2',   // Sıcak Kum
+          300: '#C4BFB3',   // Taş
+          400: '#9A9488',   // Toprak
+          500: '#706B60',   // Toprak (koyu)
+          600: '#524E45',   // Koyu Toprak
+          700: '#3A3732',   // Kömür
+          800: '#262421',   // Neredeyse Siyah
+          900: '#141310',   // Mürekkep Siyahı
         },
 
-        // Status Colors
-        success: '#27AE60',
-        error: '#E74C3C',
-        info: '#3498DB',
-        warning: '#F39C12',
+        // Status Colors (harmonized with emerald)
+        success: '#2D9F6A',
+        error: '#C94A3A',
+        info: '#2B7A9E',
+        warning: '#D4960C',
       },
 
       // Animation System
@@ -52,10 +57,14 @@ export default {
         'slide-down': 'slideDown 0.4s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
 
+        // Skeleton shimmer
+        'shimmer': 'shimmer 1.5s ease-in-out infinite',
+
         // Continuous animations
         'pulse-gentle': 'pulseGentle 2s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite',
         'float': 'float 3s ease-in-out infinite',
+        'gold-pulse': 'goldPulse 2s ease-in-out infinite',
       },
 
       keyframes: {
@@ -80,18 +89,26 @@ export default {
           '50%': { opacity: '0.85' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(30, 77, 123, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(30, 77, 123, 0.5)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(27, 125, 90, 0.25)' },
+          '50%': { boxShadow: '0 0 35px rgba(27, 125, 90, 0.40)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        goldPulse: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(212, 168, 83, 0.4)' },
+          '50%': { boxShadow: '0 0 0 8px rgba(212, 168, 83, 0)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
       },
 
       // Typography
       fontFamily: {
-        sans: ['Roboto', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
 
       // Spacing (8pt grid system)
@@ -109,15 +126,16 @@ export default {
         'xl': '24px',
       },
 
-      // Box Shadow
+      // Box Shadow - Emerald tinted
       boxShadow: {
-        'sm': '0 1px 3px rgba(0, 0, 0, 0.1)',
-        'DEFAULT': '0 4px 6px rgba(0, 0, 0, 0.1)',
-        'md': '0 4px 6px rgba(0, 0, 0, 0.1)',
-        'lg': '0 10px 15px rgba(0, 0, 0, 0.1)',
-        'xl': '0 20px 25px rgba(0, 0, 0, 0.1)',
-        'hover': '0 12px 20px rgba(30, 77, 123, 0.15)',
-        'glow': '0 0 20px rgba(30, 77, 123, 0.3)',
+        'sm': '0 1px 3px rgba(27, 125, 90, 0.06)',
+        'DEFAULT': '0 4px 6px rgba(27, 125, 90, 0.08)',
+        'md': '0 4px 12px rgba(27, 125, 90, 0.10)',
+        'lg': '0 10px 24px rgba(27, 125, 90, 0.12)',
+        'xl': '0 20px 40px rgba(27, 125, 90, 0.15)',
+        'hover': '0 12px 28px rgba(27, 125, 90, 0.18)',
+        'glow': '0 0 20px rgba(27, 125, 90, 0.25)',
+        'gold': '0 4px 16px rgba(212, 168, 83, 0.20)',
       },
     },
   },

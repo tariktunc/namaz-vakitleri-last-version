@@ -1,6 +1,6 @@
 # Namaz Vakitleri - Marka Kimliği Rehberi
 
-## 📖 İçindekiler
+## İçindekiler
 1. [Marka Özeti](#marka-özeti)
 2. [Logo Kullanımı](#logo-kullanımı)
 3. [Renk Paleti](#renk-paleti)
@@ -75,11 +75,11 @@ Logo, bir hilal ve minare siluetinden oluşan modern, minimal bir tasarımdır.
 Logo çevresinde minimum X/2 boşluk bırakılmalıdır (X = logo yüksekliği)
 
 ### Logo Kullanımında Yasak
-❌ Logoyu deforme etmeyin
-❌ Logo renklerini değiştirmeyin (sadece beyaz/mavi versiyonlar)
-❌ Gölge veya efekt eklemeyin
-❌ Logoyu döndürmeyin
-❌ Logo elementlerini ayırmayın
+- Logoyu deforme etmeyin
+- Logo renklerini değiştirmeyin (sadece beyaz/yeşil versiyonlar)
+- Gölge veya efekt eklemeyin
+- Logoyu döndürmeyin
+- Logo elementlerini ayırmayın
 
 ---
 
@@ -87,101 +87,123 @@ Logo çevresinde minimum X/2 boşluk bırakılmalıdır (X = logo yüksekliği)
 
 ### Birincil Renkler
 
-#### Deniz Mavisi (Primary Blue)
+#### Derin Zümrüt (Primary Emerald)
 ```
-HEX: #1E4D7B
-RGB: 30, 77, 123
-HSL: 208, 61%, 30%
+HEX: #1B7D5A
+RGB: 27, 125, 90
 Kullanım: Ana renk, başlıklar, buttonlar, linkler
 ```
 
-#### Gök Mavisi (Sky Blue)
+#### Koyu Zümrüt (Dark Emerald)
 ```
-HEX: #8FB3D6
-RGB: 143, 179, 214
-HSL: 210, 46%, 70%
-Kullanım: Gradient arka plan, hover states, borders
-```
-
-### İkincil Renkler
-
-#### Altın Sarısı (Gold)
-```
-HEX: #C3A878
-RGB: 195, 168, 120
-HSL: 38, 39%, 62%
-Kullanım: Vurgular, ikonlar, border accents
+HEX: #15614A
+RGB: 21, 97, 74
+Kullanım: Hover states, footer arka plan, countdown timer
 ```
 
-#### Koyu Lacivert (Dark Navy)
+#### Orta Zümrüt (Medium Emerald)
 ```
-HEX: #2C3E50
-RGB: 44, 62, 80
-HSL: 210, 29%, 24%
-Kullanım: Metin, hover states, dark mode
-```
-
-### Nötr Renkler
-
-#### Açık Gri (Light Gray)
-```
-HEX: #F5F7FA
-RGB: 245, 247, 250
-HSL: 210, 36%, 97%
-Kullanım: Arka planlar, card backgrounds
+HEX: #22996E
+RGB: 34, 153, 110
+Kullanım: Açık varyant, tagline rengi
 ```
 
-#### Orta Gri (Medium Gray)
+#### Fısıltı Yeşil (Whisper Green)
 ```
-HEX: #E8ECEF
-RGB: 232, 236, 239
-HSL: 210, 20%, 92%
-Kullanım: Borders, dividers
+HEX: #E8F5EE
+RGB: 232, 245, 238
+Kullanım: Arka plan tonu, hover highlights
 ```
 
-#### Metin Gri (Text Gray)
+#### Yumuşak Nane (Soft Mint)
 ```
-HEX: #2C3E50
-RGB: 44, 62, 80
-HSL: 210, 29%, 24%
-Kullanım: Body text, secondary text
+HEX: #C7E9D5
+RGB: 199, 233, 213
+Kullanım: Gradient uç noktası, varsayılan kart bordür
 ```
+
+### İkincil Renkler - Altın Vurgu
+
+#### Zengin Altın (Rich Gold)
+```
+HEX: #D4A853
+RGB: 212, 168, 83
+Kullanım: Vurgular, aktif namaz kartı, ikonlar, footer başlıklar
+```
+
+#### Koyu Altın (Dark Gold)
+```
+HEX: #B8912F
+RGB: 184, 145, 47
+Kullanım: Altın hover state
+```
+
+#### Yumuşak Altın (Soft Gold)
+```
+HEX: #E8C97A
+RGB: 232, 201, 122
+Kullanım: Dekoratif bordürler, countdown timer etiketleri
+```
+
+#### Krem Altın (Cream Gold)
+```
+HEX: #FDF6E3
+RGB: 253, 246, 227
+Kullanım: Aktif namaz kartı arka planı
+```
+
+### Accent Renkler
+
+#### Gece Teal (Midnight Teal)
+```
+HEX: #1A3A4A
+RGB: 26, 58, 74
+Kullanım: Koyu accent, alt başlıklar
+```
+
+#### Okyanus (Ocean)
+```
+HEX: #2A5468
+RGB: 42, 84, 104
+Kullanım: İkincil metin vurgusu
+```
+
+### Sıcak Nötr Renkler
+
+| İsim | HEX | Kullanım |
+|------|-----|----------|
+| Sıcak Beyaz | #FAFAF6 | Sayfa arka planı |
+| Parşömen | #F0EDE5 | Kart arka planları, buton varsayılan |
+| Sıcak Kum | #E0DCD2 | Bordürler, bölücüler |
+| Taş | #C4BFB3 | Devre dışı durumlar |
+| Toprak | #9A9488 | Placeholder metin |
+| Koyu Toprak | #706B60 | İkincil metin |
+| Kömür | #524E45 | Alt başlıklar, tarih metni |
+| Neredeyse Siyah | #3A3732 | Güçlü gövde metni |
+| Mürekkep | #262421 | Başlıklar, birincil metin |
+| Siyah Mürekkep | #141310 | Maksimum kontrast |
 
 ### Durum Renkleri
 
-#### Başarı (Success)
-```
-HEX: #27AE60
-RGB: 39, 174, 96
-Kullanım: Başarılı işlemler, aktif durum
-```
-
-#### Hata (Error)
-```
-HEX: #E74C3C
-RGB: 231, 76, 60
-Kullanım: Hata mesajları, uyarılar
-```
-
-#### Bilgi (Info)
-```
-HEX: #3498DB
-RGB: 52, 152, 219
-Kullanım: Bilgi mesajları, tooltips
-```
+| Durum | HEX | Kullanım |
+|-------|-----|----------|
+| Başarı | #2D9F6A | Başarılı işlemler |
+| Hata | #C94A3A | Hata mesajları |
+| Uyarı | #D4960C | Uyarı durumları |
+| Bilgi | #2B7A9E | Bilgilendirme |
 
 ### Gradient Paleti
 
 #### Gündüz Gradient (Day Gradient)
-```
-background: linear-gradient(to bottom, #F5F7FA, #8FB3D6);
-Kullanım: İftar sayfası gündüz modu
+```css
+background: linear-gradient(168deg, #FAFAF6, #E8F5EE, #C7E9D5);
+Kullanım: Ana sayfa arka planı
 ```
 
 #### Gece Gradient (Night Gradient)
-```
-background: linear-gradient(to bottom, #1E3A5F, #2C5282);
-Kullanım: Sahur sayfası gece modu
+```css
+background: linear-gradient(168deg, #141310, #1A3A4A, #15614A);
+Kullanım: Sahur modu / gelecek dark mode
 ```
 
 ### Renk Erişilebilirliği
@@ -192,9 +214,11 @@ Tüm renk kombinasyonları WCAG AA standartlarına uygun olmalıdır:
 - İkonlar için: minimum 3:1
 
 **Test Edilmiş Kombinasyonlar:**
-✅ #1E4D7B on #FFFFFF (Kontrast: 8.59:1) - AAA
-✅ #2C3E50 on #F5F7FA (Kontrast: 12.63:1) - AAA
-✅ #C3A878 on #1E4D7B (Kontrast: 3.27:1) - AA Large
+- #1B7D5A on #FFFFFF (Kontrast: 5.21:1) - AA
+- #15614A on #FFFFFF (Kontrast: 7.05:1) - AAA
+- #262421 on #FAFAF6 (Kontrast: 15.78:1) - AAA
+- #D4A853 on #1A3A4A (Kontrast: 4.58:1) - AA
+- #FFFFFF on #15614A (Kontrast: 7.05:1) - AAA
 
 ---
 
@@ -202,97 +226,51 @@ Tüm renk kombinasyonları WCAG AA standartlarına uygun olmalıdır:
 
 ### Font Ailesi
 
-#### Birincil Font: Roboto
+#### Birincil Font: Inter
 ```css
-font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 ```
 
 **Font Ağırlıkları:**
 - Regular (400): Body text
 - Medium (500): Subtitles, buttons
+- Semibold (600): Alt başlıklar, şehir isimleri
 - Bold (700): Headings, emphasis
 
-**Neden Roboto?**
-- Türkçe karakter desteği mükemmel
-- Hem ekranda hem baskıda okunabilir
-- Profesyonel ve modern görünüm
-- Google Fonts üzerinden ücretsiz
+**Neden Inter?**
+- Ekranlar için özel tasarlanmış, mükemmel okunabilirlik
+- Türkçe karakter desteği mükemmel (latin-ext subset)
+- Variable font desteği ile pürüzsüz ağırlık geçişleri
+- Modern, sıcak ve profesyonel görünüm
+- 2025-2026'nın en popüler UI fontu
 
 ### Tipografi Skalası
 
 #### Display (Hero Başlıklar)
 ```
-Font Size: 48px (3rem)
-Line Height: 1.2
-Font Weight: 700 (Bold)
-Letter Spacing: -0.02em
-Kullanım: Ana sayfa başlıkları
+Font Size: 48px (3rem) | Line Height: 1.2 | Weight: 700
 ```
 
 #### H1 (Birinci Seviye Başlık)
 ```
-Font Size: 36px (2.25rem)
-Line Height: 1.2
-Font Weight: 700 (Bold)
-Kullanım: Sayfa başlıkları
+Font Size: 36px (2.25rem) | Line Height: 1.2 | Weight: 700
 ```
 
 #### H2 (İkinci Seviye Başlık)
 ```
-Font Size: 30px (1.875rem)
-Line Height: 1.3
-Font Weight: 700 (Bold)
-Kullanım: Bölüm başlıkları
+Font Size: 30px (1.875rem) | Line Height: 1.3 | Weight: 700
 ```
 
 #### H3 (Üçüncü Seviye Başlık)
 ```
-Font Size: 24px (1.5rem)
-Line Height: 1.4
-Font Weight: 500 (Medium)
-Kullanım: Alt başlıklar
+Font Size: 24px (1.5rem) | Line Height: 1.4 | Weight: 500
 ```
 
-#### Body Large
+#### Body Large / Regular / Small / Caption
 ```
-Font Size: 18px (1.125rem)
-Line Height: 1.6
-Font Weight: 400 (Regular)
-Kullanım: Önemli paragraflar
+Body Large: 18px | Body: 16px | Small: 14px | Caption: 12px
+Line Height: 1.6 | Weight: 400
 ```
-
-#### Body Regular
-```
-Font Size: 16px (1rem)
-Line Height: 1.6
-Font Weight: 400 (Regular)
-Kullanım: Normal metin
-```
-
-#### Body Small
-```
-Font Size: 14px (0.875rem)
-Line Height: 1.6
-Font Weight: 400 (Regular)
-Kullanım: Yardımcı metin, caption
-```
-
-#### Caption
-```
-Font Size: 12px (0.75rem)
-Line Height: 1.5
-Font Weight: 400 (Regular)
-Kullanım: Footer text, timestamps
-```
-
-### Mobil Tipografi Ayarları
-
-Mobil cihazlarda (<640px) font boyutları 80%'e ölçeklendirilir:
-- Display: 38px
-- H1: 29px
-- H2: 24px
-- H3: 19px
-- Body: 16px (değişmez)
 
 ---
 
@@ -305,81 +283,31 @@ Mobil cihazlarda (<640px) font boyutları 80%'e ölçeklendirilir:
 - **Boyut**: 24x24px (base size)
 
 ### İkon Renkleri
-- Birincil: #1E4D7B (Deniz Mavisi)
-- Hover: #C3A878 (Altın)
-- Disabled: #E8ECEF (Orta Gri)
-
-### Standart İkonlar
-
-#### Namaz Vakitleri
-- 🕌 İmsak: Hilal + yıldızlar
-- ☀️ Güneş: Güneş ışınları
-- 🌤️ Öğle: Tam güneş
-- 🌅 İkindi: Alçalan güneş
-- 🌆 Akşam: Batış
-- 🌙 Yatsı: Ay + yıldızlar
-
-#### Kullanıcı Aksiyonları
-- 🔍 Arama: Büyüteç
-- 📍 Konum: Pin marker
-- ⏰ Hatırlatıcı: Zil
-- ⚙️ Ayarlar: Dişli
-- ❤️ Favori: Kalp
-
-### İkon Kullanım Kuralları
-✅ İkonları semantik olarak kullanın
-✅ Her zaman alt text ekleyin (accessibility)
-✅ Tutarlı boyutlarda kullanın
-❌ İkonları metinden daha büyük yapmayın
-❌ Dekoratif amaçla fazla ikon kullanmayın
+- Birincil: #1B7D5A (Derin Zümrüt)
+- Hover: #D4A853 (Altın)
+- Disabled: #E0DCD2 (Sıcak Kum)
 
 ---
 
 ## Görsel Dil
 
-### Fotograf Stili
-- **Ton**: Sıcak, huzurlu, davetkar
-- **Aydınlatma**: Doğal ışık, yumuşak gölgeler
-- **Kompozisyon**: Minimal, dengeli, temiz
-- **Konular**: Camiler, İslami geometri, doğa (gökyüzü, güneş, ay)
-
-### İllüstrasyon Stili
-- **Tarz**: Flat design, minimal
-- **Renkler**: Marka paletiyle uyumlu
-- **Detay Seviyesi**: Basit, az detay
-- **Kullanım**: Boş durumlar, yönlendirme, onboarding
-
 ### UI Elementleri
 
-#### Köşe Radius
-- **Small**: 4px (buttons, inputs)
-- **Medium**: 8px (cards, dialogs)
-- **Large**: 16px (modals, containers)
-
-#### Gölgeler
+#### Gölgeler (Zümrüt Tonlu)
 ```css
-/* Small Shadow */
-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-/* Medium Shadow */
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-/* Large Shadow */
-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-
-/* Hover Shadow */
-box-shadow: 0 12px 20px rgba(30, 77, 123, 0.15);
+/* Small */  box-shadow: 0 1px 3px rgba(27, 125, 90, 0.06);
+/* Medium */ box-shadow: 0 4px 12px rgba(27, 125, 90, 0.10);
+/* Large */  box-shadow: 0 10px 24px rgba(27, 125, 90, 0.12);
+/* Hover */  box-shadow: 0 12px 28px rgba(27, 125, 90, 0.18);
+/* Gold */   box-shadow: 0 4px 16px rgba(212, 168, 83, 0.20);
 ```
+
+#### Köşe Radius
+- Small: 4px | Default: 8px | Large: 16px | XL: 24px
 
 #### Spacing System (8pt Grid)
 ```
-4px  (0.25rem) - Tiny spacing
-8px  (0.5rem)  - Small spacing
-16px (1rem)    - Medium spacing
-24px (1.5rem)  - Large spacing
-32px (2rem)    - XL spacing
-48px (3rem)    - XXL spacing
-64px (4rem)    - Huge spacing
+4px - 8px - 16px - 24px - 32px - 48px - 64px
 ```
 
 ---
@@ -387,115 +315,37 @@ box-shadow: 0 12px 20px rgba(30, 77, 123, 0.15);
 ## Ses ve Ton
 
 ### Marka Sesi
-**Saygılı • Güvenilir • Yardımsever • Modern**
+**Saygılı - Güvenilir - Yardımsever - Modern**
 
 ### Ton Özellikleri
-
-#### Saygılı
 - Dini terimleri doğru ve saygıyla kullanın
 - Kullanıcılara "siz" diye hitap edin
-- Ağır ve ciddi bir ton kullanın
-
-#### Yardımsever
 - Net ve anlaşılır talimatlar verin
-- Teknoloji jargonundan kaçının
-- Her yaştan kullanıcıyı düşünün
-
-#### Güvenilir
 - Kesin ve doğru bilgi verin
 - Kaynaklarınızı belirtin (Diyanet)
-- Belirsizlik ifadelerinden kaçının
-
-#### Modern
-- Güncel dil kullanın (ama abartmayın)
-- Emoji kullanımında ölçülü olun
-- Teknoloji kavramlarını basitçe açıklayın
-
-### Metin Örnekleri
-
-#### ✅ Doğru Ton
-- "İstanbul için bugünkü namaz vakitleri"
-- "Şehrinizi seçerek namaz saatlerinizi öğrenebilirsiniz"
-- "Diyanet İşleri Başkanlığı verilerine göre"
-- "İftara 2 saat 34 dakika kaldı"
-
-#### ❌ Yanlış Ton
-- "İstanbul'daki süper vakit bilgileri!"
-- "Hemen şehrini seç ve vakitleri gör!"
-- "Bizim dataları kullan"
-- "İftara daha çoook var :)"
-
-### Hata Mesajları
-- **Sorun**: "Şehir bulunamadı"
-- **Çözüm**: "Lütfen geçerli bir şehir adı veya plaka kodu giriniz"
-
-### Başarı Mesajları
-- "Şehir başarıyla güncellendi"
-- "Hatırlatıcı kuruldu"
-- "Favori listenize eklendi"
 
 ---
 
 ## Uygulama Örnekleri
 
 ### Web Sitesi
-- Header: Logo + Navigasyon (Deniz Mavisi arka plan)
-- Hero: Gündüz/Gece gradient arka plan
-- Cards: Beyaz arka plan, hafif gölge
-- Buttons: Deniz Mavisi, hover'da Koyu Lacivert
-- Links: Deniz Mavisi, hover'da Altın
-
-### Mobil Uygulama
-- Splash Screen: Logo ortalı, Deniz Mavisi arka plan
-- Tab Bar: Beyaz arka plan, aktif tab Deniz Mavisi
-- Cards: Beyaz arka plan, 8px radius
-- Floating Action Button: Altın rengi
-
-### Sosyal Medya
-- Profil Fotoğrafı: Sadece ikon (beyaz arka plan)
-- Kapak Fotoğrafı: Tam logo + gradient arka plan
-- Post Görselleri: Marka renkleri + minimal tasarım
+- Header: Logo + Navigasyon (beyaz arka plan, sıcak bordür)
+- Hero: Sıcak beyaz → fısıltı yeşil gradient arka plan
+- Cards: Beyaz arka plan, zümrüt tonlu gölge, yumuşak köşeler
+- Buttons: Derin Zümrüt, hover'da Koyu Zümrüt
+- Links: Derin Zümrüt, hover'da Altın
+- Aktif namaz kartı: Altın bordür, krem altın arka plan
+- Footer: Koyu Zümrüt arka plan, altın vurgular
 
 ---
 
-## Marka Varlıkları
-
-### Dosya Yapısı
-```
-/public/
-  ├── logo.svg              # Ana logo
-  ├── logo-white.svg        # Beyaz versiyon
-  ├── logo-icon.svg         # Sadece ikon
-  ├── favicon.ico           # 32x32 favicon
-  ├── icon.png              # 192x192 ikon
-  ├── apple-icon.png        # 180x180 Apple touch
-  └── og-image.png          # 1200x630 sosyal medya
-```
-
-### İndirme Bağlantıları
-Logo paketini indirmek için: `/public/brand-assets.zip`
-
----
-
-## Güncellemeler ve Versiyon
-
-**Versiyon**: 1.0.0
-**Oluşturma Tarihi**: 15 Şubat 2026
-**Son Güncelleme**: 15 Şubat 2026
+**Versiyon**: 2.0.0
+**Son Güncelleme**: Mart 2026
 
 ### Değişiklik Geçmişi
+- v2.0.0 (03.2026): Renk paleti yenilendi (Mavi → Zümrüt Yeşil), font değiştirildi (Roboto → Inter), sıcak nötrler eklendi
 - v1.0.0 (15.02.2026): İlk versiyon oluşturuldu
 
 ---
 
-## İletişim
-
-Marka kullanımı ile ilgili sorularınız için:
-- **Email**: brand@namazvakitleri.com
-- **Web**: https://namazvakitleri.com
-
----
-
 **© 2026 Namaz Vakitleri. Tüm hakları saklıdır.**
-
-*Bu dokümandaki tüm marka elementleri Namaz Vakitleri'ne aittir ve yazılı izin olmadan kullanılamaz.*

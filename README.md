@@ -1,478 +1,513 @@
-# Namaz Vakitleri - Her Vakit Yanınızda
-
 <div align="center">
 
-**Türkiye geneli için güncel namaz ve iftar vakitlerini gösteren modern web uygulaması**
+<!-- Hero Section -->
+<img src="public/logo.svg" alt="Namaz Vakitleri Logo" width="120" />
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=flat-square&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.19-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+# 🕌 Namaz Vakitleri
 
-[Demo](https://namaz-vakitleri-blakfy.netlify.app/) • [Özellikler](#özellikler) • [Kurulum](#kurulum) • [Katkıda Bulunma](#katkıda-bulunma)
+### Her Vakit Yanınızda
 
-</div>
+**Türkiye genelindeki 81 il için güncel namaz vakitleri, iftar ve sahur saatleri**
+
+[![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.19-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+
+[![Lisans](https://img.shields.io/badge/Lisans-MIT-1B7D5A?style=for-the-badge)](LICENSE)
+[![Diyanet](https://img.shields.io/badge/Diyanet-Onaylı_Metod-D4A853?style=for-the-badge)](https://diyanet.gov.tr/)
+[![Netlify Status](https://img.shields.io/badge/Deploy-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://namaz-vakitleri-blakfy.netlify.app/)
+
+<br />
+
+[🌐 Canlı Demo](https://namaz-vakitleri-blakfy.netlify.app/) · [🐛 Bug Bildir](https://github.com/tariktunc/namaz-vakitleri-last-version/issues) · [💡 Özellik İste](https://github.com/tariktunc/namaz-vakitleri-last-version/issues)
+
+<br />
 
 ---
 
-## 📖 İçindekiler
+</div>
 
-- [Özellikler](#özellikler)
-- [Teknolojiler](#teknolojiler)
-- [Kurulum](#kurulum)
-- [Kullanım](#kullanım)
-- [API Dokümantasyonu](#api-dokümantasyonu)
-- [Marka Kimliği](#marka-kimliği)
-- [Proje Yapısı](#proje-yapısı)
-- [Geliştirme](#geliştirme)
-- [Deployment](#deployment)
-- [Katkıda Bulunma](#katkıda-bulunma)
-- [Lisans](#lisans)
-- [İletişim](#iletişim)
+## 📋 İçindekiler
+
+<details open>
+<summary><strong>Bölümler</strong></summary>
+
+| # | Bölüm | Açıklama |
+|---|-------|----------|
+| 1 | [Özellikler](#-özellikler) | Uygulama özellikleri |
+| 2 | [Teknolojiler](#-teknoloji-yığını) | Kullanılan teknolojiler |
+| 3 | [Hızlı Başlangıç](#-hızlı-başlangıç) | Kurulum ve çalıştırma |
+| 4 | [Proje Yapısı](#-proje-yapısı) | Dosya ve dizin yapısı |
+| 5 | [API Referansı](#-api-referansı) | AlAdhan API kullanımı |
+| 6 | [Tasarım Sistemi](#-tasarım-sistemi) | Renk, tipografi, animasyon |
+| 7 | [SEO & Erişilebilirlik](#-seo--erişilebilirlik) | SEO ve WCAG uyumluluğu |
+| 8 | [Deployment](#-deployment) | Yayınlama rehberi |
+| 9 | [Katkıda Bulunma](#-katkıda-bulunma) | Geliştirici rehberi |
+| 10 | [İletişim](#-iletişim--bağlantılar) | Geliştirici bilgileri |
+
+</details>
 
 ---
 
 ## ✨ Özellikler
 
+<table>
+<tr>
+<td width="50%">
+
 ### 🕌 Namaz Vakitleri
-- **81 İl desteği** - Türkiye genelindeki tüm şehirler için güncel vakit bilgileri
-- **Diyanet onaylı** - AlAdhan API ile Diyanet İşleri Başkanlığı hesaplama metodu (Method 13)
-- **Canlı geri sayım** - Bir sonraki namaz vaktine kalan süreyi gerçek zamanlı gösterim
-- **Otomatik güncelleme** - Vakit girdiğinde otomatik olarak sıradaki vakti gösterir
+- 81 il desteği ile güncel vakit bilgileri
+- Diyanet onaylı hesaplama (Method 13)
+- Canlı geri sayım sayacı
+- Otomatik vakit geçişleri
+
+</td>
+<td width="50%">
 
 ### 🌙 İftar & Sahur
-- **Ramazan odaklı** - İftar vakti ana sayfada öne çıkarılmış
-- **Geri sayım sistemi** - İftara ve sahura kalan süreyi gösterir
-- **Otomatik geçiş** - İftar vakti girdikten sonra sahur geri sayımına otomatik geçiş
+- İftara kalan süre geri sayımı
+- Sahura otomatik geçiş
+- Ramazan odaklı arayüz
+- Tüm vakitleri tek ekranda görüntüleme
 
-### 🎯 Kullanıcı Deneyimi
-- **Akıllı şehir seçimi** - Popüler şehirler, arama önerileri ve Türkçe karakter desteği
-- **Konum tabanlı varsayılan** - GPS ile otomatik konum belirleme (İstanbul fallback)
-- **localStorage** - Kullanıcının seçtiği şehir kaydedilir ve hatırlanır
-- **Responsive tasarım** - Mobil, tablet ve masaüstü uyumlu
-- **Erişilebilirlik** - WCAG AA uyumlu, reduced-motion desteği
+</td>
+</tr>
+<tr>
+<td width="50%">
 
-### 🚀 Performans & SEO
-- **Lighthouse 90+** - Yüksek performans skoru
-- **Dinamik metadata** - Şehir ve zaman bazlı SEO optimizasyonu
-- **OpenGraph & Twitter Cards** - Sosyal medya paylaşımları için optimize edilmiş
-- **Structured Data** - JSON-LD schema markup
-- **Sitemap & Robots.txt** - Arama motoru tarayıcıları için optimize edilmiş
+### 📍 Akıllı Konum
+- GPS ile otomatik şehir tespiti
+- Akıllı arama ve öneriler
+- Plaka kodu ile arama (01-81)
+- Türkçe karakter normalizasyonu
+- Popüler şehir hızlı erişim
 
-### 🎨 Marka Kimliği
-- **Tutarlı tasarım sistemi** - Özel renk paleti, tipografi ve animasyonlar
-- **Dindar hedef kitle** - Sakin, huzurlu ve profesyonel görünüm
-- **Özel logo ve ikonlar** - Minare, hilal ve yıldız temalı SVG tasarımlar
+</td>
+<td width="50%">
 
----
+### 🚀 Performans
+- Next.js 16 App Router + Turbopack
+- Server-side metadata & SEO
+- Client-side state management
+- localStorage ile veri kalıcılığı
+- Responsive (mobil-öncelikli) tasarım
 
-## 🛠️ Teknolojiler
-
-### Frontend
-- **[Next.js 16.1.6](https://nextjs.org/)** - React framework (App Router, Turbopack)
-- **[React 19.0.0](https://react.dev/)** - UI library
-- **[TypeScript 5.x](https://www.typescriptlang.org/)** - Type safety
-- **[Tailwind CSS 3.4.19](https://tailwindcss.com/)** - Utility-first CSS framework
-
-### API & Data
-- **[AlAdhan API](https://aladhan.com/prayer-times-api)** - Prayer times calculation
-- **[Axios](https://axios-http.com/)** - HTTP client
-- **localStorage** - Client-side data persistence
-
-### Developer Tools
-- **ESLint** - Code linting
-- **PostCSS** - CSS processing
-- **Turbopack** - Fast bundler for development
+</td>
+</tr>
+</table>
 
 ---
 
-## 📦 Kurulum
+## 🔧 Teknoloji Yığını
+
+<div align="center">
+
+| Katman | Teknoloji | Versiyon | Açıklama |
+|--------|-----------|----------|----------|
+| ⚛️ **Framework** | Next.js | 16.1.6 | App Router, Turbopack, Server Components |
+| 🎨 **UI Library** | React | 19.0.0 | Hooks, Context API |
+| 📘 **Dil** | TypeScript | 5.x | Tip güvenliği |
+| 🎯 **Stil** | Tailwind CSS | 3.4.19 | Utility-first CSS |
+| 🌐 **API** | AlAdhan | v1 | Diyanet hesaplama metodu |
+| 📡 **HTTP** | Axios | 1.7.9 | API istekleri |
+| 📍 **Konum** | Nominatim | - | Ters jeokodlama (OpenStreetMap) |
+
+</div>
+
+---
+
+## 🚀 Hızlı Başlangıç
 
 ### Gereksinimler
-- Node.js 18.x veya üzeri
-- npm 9.x veya üzeri
 
-### Adımlar
+| Araç | Minimum Versiyon |
+|------|-----------------|
+| Node.js | 18.x |
+| npm | 9.x |
 
-1. **Repoyu klonlayın**
+### Kurulum
+
 ```bash
-git clone https://github.com/tariktunc/namaz-vakitleri.git
-cd namaz-vakitleri
-```
+# 1. Repoyu klonlayın
+git clone https://github.com/tariktunc/namaz-vakitleri-last-version.git
 
-2. **Bağımlılıkları yükleyin**
-```bash
+# 2. Proje dizinine gidin
+cd namaz-vakitleri-last-version
+
+# 3. Bağımlılıkları yükleyin
 npm install
-```
 
-3. **Geliştirme sunucusunu başlatın**
-```bash
+# 4. Geliştirme sunucusunu başlatın
 npm run dev
 ```
 
-4. **Tarayıcıda açın**
-```
-http://localhost:3000
-```
+> 🌐 Tarayıcıda [http://localhost:3000](http://localhost:3000) adresini açın
 
-### Build & Production
+### Komutlar
 
-```bash
-# Production build
-npm run build
-
-# Production sunucusunu başlat
-npm start
-
-# Lint kontrolü
-npm run lint
-```
-
----
-
-## 🎮 Kullanım
-
-### Şehir Seçimi
-
-1. **Otomatik Konum**: İlk ziyarette GPS izni verin (opsiyonel)
-2. **Manuel Arama**: Şehir adı yazarak arama yapın
-3. **Popüler Şehirler**: Hızlı erişim butonlarını kullanın
-4. **Kayıt**: Seçiminiz otomatik olarak kaydedilir
-
-### Vakit Görüntüleme
-
-#### Ana Sayfa (İftar Countdown)
-- İftara kalan süre gerçek zamanlı gösterilir
-- İftar vakti girdikten sonra sahur vakti gösterilir
-- Tüm günlük namaz vakitleri listelenir
-
-#### Namaz Vakitleri Sayfası
-- Altı vakit: İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı
-- Bir sonraki vakite geri sayım
-- Güncel tarih ve şehir bilgisi
-
----
-
-## 🔌 API Dokümantasyonu
-
-### AlAdhan API
-
-Proje, [AlAdhan API](https://aladhan.com/prayer-times-api) kullanmaktadır.
-
-#### Endpoint
-```
-GET https://api.aladhan.com/v1/timingsByCity/{date}
-```
-
-#### Parametreler
-```typescript
-{
-  city: string,       // Şehir adı (örn: "Istanbul")
-  country: "Turkey",  // Sabit
-  method: 13          // Diyanet İşleri Başkanlığı
-}
-```
-
-#### Hesaplama Metodu
-- **Method 13**: Diyanet İşleri Başkanlığı, Türkiye
-- Fecr Açısı: 18°
-- İşa Açısı: 17°
-
-#### Örnek Kullanım
-
-```typescript
-import axios from 'axios';
-
-const getPrayerTimes = async (cityName: string) => {
-  const today = new Date();
-  const formattedDate = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`;
-
-  const response = await axios.get(
-    `https://api.aladhan.com/v1/timingsByCity/${formattedDate}`,
-    {
-      params: {
-        city: cityName,
-        country: 'Turkey',
-        method: 13
-      }
-    }
-  );
-
-  return response.data.data.timings;
-};
-```
-
-#### Response Yapısı
-
-```typescript
-interface AladhanTimings {
-  Fajr: string;      // "04:30"
-  Sunrise: string;   // "06:15"
-  Dhuhr: string;     // "12:45"
-  Asr: string;       // "15:30"
-  Maghrib: string;   // "18:15"
-  Isha: string;      // "19:45"
-  Imsak: string;     // "04:20"
-  Midnight: string;  // "00:30"
-  Firstthird: string;
-  Lastthird: string;
-}
-```
-
-### Rate Limiting
-- **Limit yok**: AlAdhan API ücretsiz ve limitsizdir
-- **Önbellekleme**: 5 dakika TTL ile client-side caching önerilir
-
----
-
-## 🎨 Marka Kimliği
-
-Detaylı marka kılavuzu için [`BRAND.md`](./BRAND.md) dosyasına bakınız.
-
-### Renk Paleti
-
-```css
-/* Primary Colors */
---brand-primary: #1E4D7B;      /* Deniz Mavisi */
---brand-sky: #8FB3D6;           /* Gök Mavisi */
---brand-gold: #C3A878;          /* Altın Sarısı */
---brand-navy: #2C3E50;          /* Koyu Lacivert */
-
-/* Neutral Colors */
---neutral-50: #F5F7FA;          /* Açık Gri */
---neutral-800: #2C3E50;         /* Metin Gri */
-```
-
-### Tipografi
-
-- **Font Ailesi**: Roboto, system-ui, sans-serif
-- **Başlık**: 700 (Bold)
-- **Metin**: 400 (Regular), 500 (Medium)
-
-### Animasyonlar
-
-```javascript
-// Tailwind custom animations
-animate-fade-in      // Yumuşak görünme
-animate-slide-up     // Aşağıdan kayma
-animate-slide-down   // Yukarıdan kayma
-animate-pulse-gentle // Nazik nabız efekti
-animate-glow         // Işıltı efekti
-```
+| Komut | Açıklama |
+|-------|----------|
+| `npm run dev` | Geliştirme sunucusu (Turbopack) |
+| `npm run build` | Production build |
+| `npm start` | Production sunucusu |
+| `npm run lint` | ESLint kontrolü |
 
 ---
 
 ## 📁 Proje Yapısı
 
+<details>
+<summary><strong>Dizin ağacını göster</strong></summary>
+
 ```
-namaz-vakitleri/
-├── public/
-│   ├── logo.svg                 # Ana logo
-│   ├── logo-white.svg           # Beyaz logo (koyu arka plan)
-│   ├── logo-icon.svg            # Favicon için ikon
-│   └── og-image-template.html   # Social media sharing template
+namaz-vakitleri-last-version/
 │
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx           # Root layout + metadata
-│   │   ├── page.tsx             # Ana sayfa (İftar countdown)
-│   │   ├── globals.css          # Global styles + brand CSS
-│   │   ├── sitemap.ts           # XML sitemap generator
-│   │   ├── robots.ts            # Robots.txt
-│   │   └── namaz-vakitleri/
-│   │       └── page.tsx         # Namaz vakitleri sayfası
-│   │
-│   ├── components/
-│   │   ├── Navbar.tsx           # Navigation
-│   │   ├── Footer.tsx           # Footer with brand styling
-│   │   ├── CitySearch.tsx       # Şehir arama (autocomplete)
-│   │   ├── CountdownTimer.tsx   # Geri sayım bileşeni
-│   │   └── StructuredData.tsx   # JSON-LD schema
-│   │
-│   ├── context/
-│   │   └── CityContext.tsx      # Global city state + localStorage
-│   │
-│   ├── services/
-│   │   └── api.ts               # AlAdhan API integration
-│   │
-│   ├── types/
-│   │   └── prayer.ts            # TypeScript interfaces
-│   │
-│   └── utils/
-│       └── cities.ts            # 81 il koordinatları + helpers
+├── 📂 public/                    # Statik dosyalar
+│   ├── favicon.ico               # Favicon
+│   ├── logo.svg                  # Ana logo
+│   ├── logo-white.svg            # Beyaz logo (koyu arka plan)
+│   └── logo-icon.svg             # Sadece ikon
 │
-├── BRAND.md                     # Marka kimliği kılavuzu
-├── README.md                    # Bu dosya
-├── package.json
-├── tailwind.config.ts           # Brand colors + animations
-├── next.config.ts               # Next.js config + redirects
-└── tsconfig.json
+├── 📂 src/
+│   ├── 📂 app/                   # Next.js App Router
+│   │   ├── layout.tsx            # Root layout (Navbar + Footer + SEO)
+│   │   ├── page.tsx              # Ana sayfa
+│   │   ├── globals.css           # Global stiller + CSS değişkenleri
+│   │   ├── manifest.ts           # PWA Web App Manifest
+│   │   ├── sitemap.ts            # Dinamik XML sitemap
+│   │   ├── robots.ts             # Robots.txt yapılandırması
+│   │   ├── 📂 iftar/
+│   │   │   └── page.tsx          # İftar geri sayım sayfası
+│   │   └── 📂 namaz-vakitleri/
+│   │       └── page.tsx          # Namaz vakitleri sayfası
+│   │
+│   ├── 📂 components/            # React bileşenleri
+│   │   ├── Navbar.tsx            # Navigasyon çubuğu
+│   │   ├── Footer.tsx            # Site alt bilgi
+│   │   ├── HeaderWrapper.tsx     # Yapışkan başlık wrapper
+│   │   ├── CitySearch.tsx        # Şehir arama (autocomplete)
+│   │   ├── PrayerTimesView.tsx   # Namaz vakitleri görünümü
+│   │   ├── StructuredData.tsx    # JSON-LD şema verileri
+│   │   ├── LocationDetector.ts   # GPS konum algılama
+│   │   ├── 📂 features/
+│   │   │   └── 📂 IftarVakti/
+│   │   │       ├── index.tsx     # İftar/Sahur geri sayım
+│   │   │       └── PrayerTimeCard.tsx  # Vakit kartı
+│   │   └── 📂 ui/
+│   │       ├── 📂 CountdownTimer/
+│   │       │   ├── index.tsx     # Geri sayım bileşeni
+│   │       │   └── utils.ts     # Zamanlayıcı yardımcıları
+│   │       └── LoadingSpinner.tsx # Yükleme göstergesi
+│   │
+│   ├── 📂 context/
+│   │   └── CityContext.tsx       # Global şehir state yönetimi
+│   │
+│   ├── 📂 services/
+│   │   └── api.ts                # AlAdhan API entegrasyonu
+│   │
+│   ├── 📂 types/
+│   │   └── prayer.ts             # TypeScript arayüzleri
+│   │
+│   └── 📂 utils/
+│       ├── cities.ts             # 81 il verisi + koordinatlar
+│       └── date.ts               # Tarih formatlama
+│
+├── BRAND.md                      # Marka kimliği kılavuzu (v2.0)
+├── README.md                     # Bu dosya
+├── package.json                  # Bağımlılıklar ve scriptler
+├── tailwind.config.ts            # Tailwind yapılandırması
+├── next.config.ts                # Next.js yapılandırması
+├── tsconfig.json                 # TypeScript yapılandırması
+└── .nvmrc                        # Node.js sürümü (20)
 ```
+
+</details>
 
 ---
 
-## 🔧 Geliştirme
+## 🔌 API Referansı
 
-### Scripts
+<details>
+<summary><strong>AlAdhan Prayer Times API</strong></summary>
 
-```bash
-# Development server (Turbopack)
-npm run dev
+### Endpoint
 
-# Production build
-npm run build
-
-# Start production server
-npm start
-
-# Lint code
-npm run lint
+```
+GET https://api.aladhan.com/v1/timingsByCity/{DD-MM-YYYY}
 ```
 
-### Environment Variables
+### Parametreler
 
-Şu anda API key gerekmemektedir (AlAdhan API ücretsizdir).
+| Parametre | Tip | Zorunlu | Açıklama |
+|-----------|-----|---------|----------|
+| `city` | string | ✅ | Şehir adı (ör: `Istanbul`) |
+| `country` | string | ✅ | Ülke: `Turkey` |
+| `method` | number | ✅ | Hesaplama: `13` (Diyanet) |
 
-Gelecekte eklenebilir:
-```env
-# .env.local (opsiyonel)
-NEXT_PUBLIC_API_BASE_URL=https://api.aladhan.com/v1
-```
+### Hesaplama Metodu
 
-### Debugging
+| Özellik | Değer |
+|---------|-------|
+| **Method** | 13 - Diyanet İşleri Başkanlığı |
+| **Fecr Açısı** | 18° |
+| **İşa Açısı** | 17° |
+| **Rate Limit** | Yok (ücretsiz) |
+
+### Örnek İstek
 
 ```typescript
-// Developer console'da şehir değiştirme
-localStorage.setItem('selectedCity', 'ankara');
-localStorage.setItem('displayCity', 'Ankara');
-location.reload();
+import axios from 'axios';
+
+const response = await axios.get(
+  'https://api.aladhan.com/v1/timingsByCity/03-03-2026',
+  {
+    params: {
+      city: 'Istanbul',
+      country: 'Turkey',
+      method: 13
+    }
+  }
+);
 ```
 
-### Testing
+### Dönen Vakitler
 
-```bash
-# Manual testing checklist
-- [ ] Şehir seçimi çalışıyor mu?
-- [ ] Vakit bilgileri doğru mu?
-- [ ] Geri sayım çalışıyor mu?
-- [ ] localStorage kaydediyor mu?
-- [ ] Responsive tasarım düzgün mü?
-- [ ] SEO metadata doğru mu?
-```
+| Vakit | API Alanı | Örnek |
+|-------|-----------|-------|
+| İmsak | `Imsak` | `04:20` |
+| Güneş | `Sunrise` | `06:15` |
+| Öğle | `Dhuhr` | `12:45` |
+| İkindi | `Asr` | `15:30` |
+| Akşam | `Maghrib` | `18:15` |
+| Yatsı | `Isha` | `19:45` |
+
+</details>
+
+---
+
+## 🎨 Tasarım Sistemi
+
+> Detaylı marka kılavuzu: [`BRAND.md`](./BRAND.md)
+
+<details>
+<summary><strong>Renk Paleti</strong></summary>
+
+### Ana Renkler - Zümrüt Yeşili
+
+| Renk | Hex | Kullanım |
+|------|-----|----------|
+| 🟢 **Derin Zümrüt** | `#1B7D5A` | Ana renk, başlıklar, butonlar |
+| 🟢 **Koyu Zümrüt** | `#15614A` | Hover, footer arka planı |
+| 🟢 **Orta Zümrüt** | `#22996E` | Aktif durumlar |
+| 🟢 **Fısıltı Yeşil** | `#E8F5EE` | Arka plan tonu |
+
+### Altın Vurgular
+
+| Renk | Hex | Kullanım |
+|------|-----|----------|
+| 🟡 **Zengin Altın** | `#D4A853` | Vurgu, ikonlar |
+| 🟡 **Yumuşak Altın** | `#E8C97A` | Footer başlıklar, hover |
+| 🟡 **Krem Altın** | `#FDF6E3` | Arka plan aksanı |
+
+### Nötr Tonlar
+
+| Renk | Hex | Kullanım |
+|------|-----|----------|
+| ⬜ **Sıcak Beyaz** | `#FAFAF6` | Sayfa arka planı |
+| 🟫 **Parşömen** | `#F0EDE5` | Kart arka planları |
+| ⬛ **Mürekkep** | `#141310` | Yoğun metin |
+
+</details>
+
+<details>
+<summary><strong>Tipografi</strong></summary>
+
+| Element | Font | Ağırlık | Boyut |
+|---------|------|---------|-------|
+| Display | Inter | 700 | 48px |
+| Heading 1 | Inter | 700 | 36px |
+| Heading 2 | Inter | 700 | 30px |
+| Body | Inter | 400 | 16px |
+| Caption | Inter | 400 | 12px |
+
+</details>
+
+<details>
+<summary><strong>Animasyonlar</strong></summary>
+
+| Animasyon | Süre | Kullanım |
+|-----------|------|----------|
+| `fade-in` | 0.5s | Sayfa geçişleri |
+| `slide-up` | 0.4s | Kart girişleri |
+| `slide-down` | 0.4s | Dropdown açılma |
+| `scale-in` | 0.3s | Modal/popup |
+| `pulse-gentle` | 2s ∞ | Önemli bilgiler |
+| `glow` | 2s ∞ | Aktif vakit vurgusu |
+| `gold-pulse` | 2s ∞ | İftar geri sayımı |
+
+> ♿ `prefers-reduced-motion` desteği ile hareket hassasiyeti olan kullanıcılar için animasyonlar otomatik devre dışı bırakılır.
+
+</details>
+
+---
+
+## 🔍 SEO & Erişilebilirlik
+
+<details>
+<summary><strong>SEO Özellikleri</strong></summary>
+
+| Özellik | Durum | Açıklama |
+|---------|-------|----------|
+| Meta Etiketler | ✅ | Title, description, keywords |
+| Open Graph | ✅ | Facebook/LinkedIn paylaşım |
+| Twitter Cards | ✅ | Twitter paylaşım |
+| JSON-LD | ✅ | WebApplication, Organization, WebSite |
+| Sitemap.xml | ✅ | Dinamik, 12 sayfa |
+| Robots.txt | ✅ | Tarayıcı yönlendirmesi |
+| Canonical URL | ✅ | Sayfa bazlı canonical |
+| Web App Manifest | ✅ | PWA desteği |
+| Sayfa Bazlı Metadata | ✅ | Her sayfa özel meta |
+
+</details>
+
+<details>
+<summary><strong>Erişilebilirlik (WCAG AA)</strong></summary>
+
+| Özellik | Durum | Açıklama |
+|---------|-------|----------|
+| Renk Kontrastı | ✅ | WCAG AA (4.5:1+) tüm metin |
+| Klavye Navigasyonu | ✅ | Tab, Enter, Escape desteği |
+| Focus Göstergesi | ✅ | `focus-visible` ring |
+| ARIA Etiketler | ✅ | `aria-label`, `aria-current` |
+| Ekran Okuyucu | ✅ | `sr-only`, `aria-hidden` |
+| Reduced Motion | ✅ | Animasyon devre dışı |
+| Semantik HTML | ✅ | `nav`, `main`, `footer` |
+| Dil Etiketi | ✅ | `lang="tr"` |
+
+</details>
 
 ---
 
 ## 🚀 Deployment
 
-### Vercel (Önerilen)
-
-1. **GitHub'a push edin**
-```bash
-git push origin main
-```
-
-2. **Vercel'e bağlayın**
-   - [vercel.com](https://vercel.com) hesabı oluşturun
-   - Repository'yi import edin
-   - Auto-deploy aktif olacaktır
-
-3. **Domain ayarlayın**
-   - Custom domain ekleyin
-   - DNS ayarlarını güncelleyin
-
 ### Netlify (Mevcut)
 
-Proje şu anda Netlify üzerinde yayında: [namaz-vakitleri-blakfy.netlify.app](https://namaz-vakitleri-blakfy.netlify.app/)
+Proje şu anda Netlify üzerinde yayında:
+
+🌐 **[namaz-vakitleri-blakfy.netlify.app](https://namaz-vakitleri-blakfy.netlify.app/)**
+
+### Vercel (Önerilen)
+
+```bash
+# 1. Vercel CLI yükleyin
+npm i -g vercel
+
+# 2. Deploy edin
+vercel
+
+# 3. Production deploy
+vercel --prod
+```
 
 ### Diğer Platformlar
 
-- **Cloudflare Pages**: Git integration
-- **Railway**: Container deployment
-
-### Build Optimizasyonu
-
-```javascript
-// next.config.ts
-const nextConfig = {
-  compress: true,           // Gzip compression
-  poweredByHeader: false,   // Remove X-Powered-By header
-  reactStrictMode: true,    // React strict mode
-};
-```
+| Platform | Yöntem |
+|----------|--------|
+| Vercel | Git entegrasyonu |
+| Netlify | Git entegrasyonu |
+| Cloudflare Pages | Git entegrasyonu |
+| Docker | `Dockerfile` ile |
 
 ---
 
 ## 🤝 Katkıda Bulunma
 
-Katkılarınızı bekliyoruz! Lütfen şu adımları izleyin:
+Katkılarınızı bekliyoruz!
 
-1. **Fork edin** - Projeyi kendi hesabınıza fork edin
-2. **Branch oluşturun** - `git checkout -b feature/amazing-feature`
-3. **Commit edin** - `git commit -m 'feat: Add amazing feature'`
-4. **Push edin** - `git push origin feature/amazing-feature`
-5. **Pull Request açın** - Değişikliklerinizi açıklayın
+```bash
+# 1. Fork edin ve klonlayın
+git clone https://github.com/YOUR_USERNAME/namaz-vakitleri-last-version.git
 
-### Commit Convention
+# 2. Branch oluşturun
+git checkout -b feature/yeni-ozellik
 
-```
-feat: Yeni özellik
-fix: Bug düzeltmesi
-docs: Dokümantasyon
-style: Kod formatı (logic değişikliği yok)
-refactor: Kod yeniden yapılandırma
-perf: Performans iyileştirmesi
-test: Test ekleme/düzeltme
-chore: Build/dependency güncellemeleri
+# 3. Değişiklikleri yapın ve commit edin
+git commit -m "feat: Yeni özellik eklendi"
+
+# 4. Push edin
+git push origin feature/yeni-ozellik
+
+# 5. Pull Request açın
 ```
 
-### Code Style
+### Commit Kuralları
 
-- **ESLint**: Otomatik linting
-- **TypeScript**: Tüm kodlar type-safe olmalı
-- **Prettier**: Kod formatı (opsiyonel)
-- **Tailwind**: Inline classes (no custom CSS unless necessary)
+| Prefix | Açıklama | Örnek |
+|--------|----------|-------|
+| `feat:` | Yeni özellik | `feat: Şehir favorileri eklendi` |
+| `fix:` | Bug düzeltmesi | `fix: Geri sayım sıfırlanma hatası` |
+| `docs:` | Dokümantasyon | `docs: API referansı güncellendi` |
+| `style:` | Stil değişikliği | `style: Footer responsive iyileştirme` |
+| `refactor:` | Yeniden yapılandırma | `refactor: CityContext optimizasyonu` |
+| `perf:` | Performans | `perf: API cache eklendi` |
 
 ---
 
 ## 📄 Lisans
 
-Bu proje **MIT Lisansı** altında lisanslanmıştır.
+Bu proje **MIT Lisansı** altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakınız.
 
-Ticari kullanım yasak değildir ancak proje ticari amaç gütmemektedir. Diyanet İşleri Başkanlığı'nın resmi bir ürünü değildir.
+> Bu proje ticari amaç gütmemektedir. Diyanet İşleri Başkanlığı'nın resmi bir ürünü değildir. Vakitler AlAdhan API kullanılarak Diyanet metoduyla hesaplanmaktadır.
 
 ---
 
-## 📞 İletişim
+## 📞 İletişim & Bağlantılar
 
-### Geliştirici
-**Tarık Tunç**
-- Website: [tariktunc.com](https://tariktunc.com)
-- GitHub: [@tariktunc](https://github.com/tariktunc)
+<div align="center">
+
+| Platform | Bağlantı |
+|----------|----------|
+| 🌐 **Kişisel Site** | [tariktunc.com](https://tariktunc.com) |
+| 🌐 **Blakfy** | [blakfy.com](https://blakfy.com) |
+| 💻 **GitHub** | [github.com/tariktunc](https://github.com/tariktunc) |
+| 📂 **Proje Repo** | [namaz-vakitleri-last-version](https://github.com/tariktunc/namaz-vakitleri-last-version) |
+| 🕌 **Canlı Demo** | [namaz-vakitleri-blakfy.netlify.app](https://namaz-vakitleri-blakfy.netlify.app/) |
+
+</div>
 
 ### Veri Kaynakları
-- **API**: [AlAdhan Prayer Times API](https://aladhan.com)
-- **Hesaplama Metodu**: Diyanet İşleri Başkanlığı (Method 13)
 
-### Sorunlar & Öneriler
-- **Issues**: GitHub Issues sayfası
-- **Pull Requests**: GitHub PRs sayfası
+- **API**: [AlAdhan Prayer Times API](https://aladhan.com)
+- **Hesaplama**: Diyanet İşleri Başkanlığı (Method 13)
+- **Konum**: [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org/)
 
 ---
 
 ## 🙏 Teşekkürler
 
-- **Diyanet İşleri Başkanlığı** - Hesaplama metodolojisi
-- **AlAdhan.com** - Ücretsiz API hizmeti
-- **Next.js Team** - Harika framework
-- **Tailwind CSS** - Kullanışlı CSS framework
-- **Kullanıcılarımız** - Geri bildirimler ve destek
+<div align="center">
+
+| | Katkı |
+|-|-------|
+| 🕌 **Diyanet İşleri Başkanlığı** | Hesaplama metodolojisi |
+| 🌐 **AlAdhan.com** | Ücretsiz API hizmeti |
+| 🗺️ **OpenStreetMap** | Ters jeokodlama servisi |
+| ⚛️ **Next.js & React** | Framework altyapısı |
+| 🎨 **Tailwind CSS** | Stil sistemi |
+
+</div>
 
 ---
 
 <div align="center">
 
+<img src="public/logo-icon.svg" alt="Namaz Vakitleri" width="48" />
+
 **Her Vakit Yanınızda** 🕌
 
 Made with ❤️ by [Tarık Tunç](https://tariktunc.com)
+
+[![GitHub Stars](https://img.shields.io/github/stars/tariktunc/namaz-vakitleri-last-version?style=social)](https://github.com/tariktunc/namaz-vakitleri-last-version)
 
 </div>

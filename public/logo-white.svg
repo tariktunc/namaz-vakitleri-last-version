@@ -9,22 +9,22 @@
   <rect x="20.5" y="22" width="3" height="6" fill="#FFFFFF" rx="0.5"/>
 
   <!-- Minare Balcony -->
-  <path d="M 16 35 L 28 35 L 28 36 L 16 36 Z" fill="#C3A878"/>
-  <path d="M 17 28 L 27 28 L 27 29 L 17 29 Z" fill="#C3A878"/>
+  <path d="M 16 35 L 28 35 L 28 36 L 16 36 Z" fill="#D4A853"/>
+  <path d="M 17 28 L 27 28 L 27 29 L 17 29 Z" fill="#D4A853"/>
 
   <!-- Crescent Moon -->
-  <path d="M 8 20 Q 4 20 4 15 Q 4 10 8 10 Q 6 12 6 15 Q 6 18 8 20 Z" fill="#C3A878"/>
+  <path d="M 8 20 Q 4 20 4 15 Q 4 10 8 10 Q 6 12 6 15 Q 6 18 8 20 Z" fill="#D4A853"/>
 
   <!-- Star (5-pointed) -->
-  <path d="M 35 15 L 36 17.5 L 38.5 17.5 L 36.5 19 L 37 21.5 L 35 20 L 33 21.5 L 33.5 19 L 31.5 17.5 L 34 17.5 Z" fill="#C3A878"/>
+  <path d="M 35 15 L 36 17.5 L 38.5 17.5 L 36.5 19 L 37 21.5 L 35 20 L 33 21.5 L 33.5 19 L 31.5 17.5 L 34 17.5 Z" fill="#D4A853"/>
 
   <!-- Text: NAMAZ VAKİTLERİ -->
-  <text x="50" y="30" font-family="Roboto, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">
+  <text x="50" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">
     NAMAZ VAKİTLERİ
   </text>
 
   <!-- Tagline: Her Vakit Yanınızda -->
-  <text x="50" y="45" font-family="Roboto, sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.8)">
+  <text x="50" y="45" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.8)">
     Her Vakit Yanınızda
   </text>
 </svg>

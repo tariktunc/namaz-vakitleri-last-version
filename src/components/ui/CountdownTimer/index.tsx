@@ -25,7 +25,7 @@ export function CountdownTimer({ targetTime, onComplete }: CountdownTimerProps) 
 
   return (
     <div className="text-center py-6">
-      <div className="text-4xl sm:text-6xl font-bold text-[#1E4D7B] font-mono">
+      <div className="text-4xl sm:text-6xl font-bold text-brand-primary font-mono">
         {timeRemaining}
       </div>
     </div>

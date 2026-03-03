@@ -4,36 +4,46 @@
 
 /* Brand CSS Variables */
 :root {
-  /* Primary Colors */
-  --brand-primary: #1E4D7B;
-  --brand-primary-dark: #163A5F;
-  --brand-primary-light: #2C5F96;
-  --brand-sky: #8FB3D6;
-  --brand-gold: #C3A878;
-  --brand-navy: #2C3E50;
+  /* Primary Colors - Emerald Green */
+  --brand-primary: #1B7D5A;
+  --brand-primary-dark: #15614A;
+  --brand-primary-light: #22996E;
+  --brand-primary-50: #E8F5EE;
+  --brand-primary-100: #C7E9D5;
 
-  /* Neutral Colors */
-  --neutral-50: #F5F7FA;
-  --neutral-100: #E8ECEF;
-  --neutral-800: #2C3E50;
-  --neutral-900: #1A2632;
+  /* Gold Accent */
+  --brand-gold: #D4A853;
+  --brand-gold-dark: #B8912F;
+  --brand-gold-light: #E8C97A;
+  --brand-gold-50: #FDF6E3;
+
+  /* Accent */
+  --brand-accent: #1A3A4A;
+  --brand-accent-light: #2A5468;
+
+  /* Neutral Colors - Warm tones */
+  --neutral-50: #FAFAF6;
+  --neutral-100: #F0EDE5;
+  --neutral-200: #E0DCD2;
+  --neutral-800: #262421;
+  --neutral-900: #141310;
 
   /* Status Colors */
-  --success: #27AE60;
-  --error: #E74C3C;
-  --info: #3498DB;
-  --warning: #F39C12;
+  --success: #2D9F6A;
+  --error: #C94A3A;
+  --info: #2B7A9E;
+  --warning: #D4960C;
 
   /* Legacy variables (compatibility) */
-  --background: #ffffff;
-  --foreground: #2C3E50;
+  --background: #FAFAF6;
+  --foreground: #262421;
 }
 
 /* Dark Mode Support (Future) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1A2632;
-    --foreground: #F5F7FA;
+    --background: #141310;
+    --foreground: #FAFAF6;
   }
 }
 
@@ -51,6 +61,19 @@
 
 /* Custom Component Styles */
 @layer components {
+  /* ===== LAYOUT ===== */
+  .page-layout {
+    @apply min-h-screen flex flex-col bg-gradient-to-br from-neutral-50 via-brand-primary-50 to-brand-primary-100;
+  }
+
+  .page-loading {
+    @apply min-h-screen bg-gradient-to-br from-neutral-50 via-brand-primary-50 to-brand-primary-100 flex items-center justify-center;
+  }
+
+  .page-container {
+    @apply max-w-2xl mx-auto px-4 py-4 sm:py-8;
+  }
+
   /* Legacy background class */
   .bg-background-light {
     background-color: var(--neutral-50);
@@ -58,32 +81,48 @@
 
   /* Brand Gradient Backgrounds */
   .bg-gradient-day {
-    background: linear-gradient(to bottom, var(--neutral-50), var(--brand-sky));
+    background: linear-gradient(168deg, var(--neutral-50), var(--brand-primary-50), var(--brand-primary-100));
   }
 
   .bg-gradient-night {
-    background: linear-gradient(to bottom, #1E3A5F, #2C5282);
+    background: linear-gradient(168deg, #141310, #1A3A4A, #15614A);
   }
 
-  /* Brand Button Styles */
-  .btn-primary {
-    @apply bg-brand-primary text-white font-medium px-6 py-3 rounded-lg shadow-sm hover:bg-brand-navy focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 transition-all;
+  /* ===== CARDS ===== */
+  .content-card {
+    @apply bg-white rounded-xl shadow-lg p-4 sm:p-8 border border-neutral-100;
   }
 
-  .btn-secondary {
-    @apply bg-white text-brand-primary border-2 border-brand-primary font-medium px-6 py-3 rounded-lg hover:bg-brand-primary hover:text-white focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 transition-all;
+  .search-card {
+    @apply bg-white rounded-xl shadow-lg p-4 sm:p-8 mb-4 sm:mb-8;
   }
 
-  /* Brand Card Styles */
   .card {
-    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-hover transition-shadow;
+    @apply bg-white rounded-xl shadow-md p-6 hover:shadow-hover transition-shadow;
   }
 
   .card-highlight {
     @apply border-l-4 border-brand-gold;
   }
 
-  /* Brand Typography */
+  .prayer-row {
+    @apply flex justify-between p-3 sm:p-4 bg-white rounded shadow-sm hover:shadow-md transition-shadow border-l-4;
+  }
+
+  /* ===== TIMER ===== */
+  .timer-box {
+    @apply bg-brand-primary-dark text-white rounded-xl p-4 min-w-[100px] shadow-lg;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  .page-title {
+    @apply text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center text-brand-primary;
+  }
+
+  .section-title {
+    @apply text-xl sm:text-2xl font-bold text-brand-primary capitalize;
+  }
+
   .text-display {
     @apply text-5xl font-bold leading-tight;
   }
@@ -98,6 +137,52 @@
 
   .text-heading-3 {
     @apply text-2xl font-medium leading-snug;
+  }
+
+  /* ===== SPINNER ===== */
+  .spinner {
+    @apply animate-spin rounded-full border-b-2 border-brand-primary mx-auto;
+  }
+
+  /* ===== FORM ELEMENTS ===== */
+  .input-field {
+    @apply w-full border border-neutral-200 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary text-neutral-800 placeholder-neutral-400 transition-colors;
+  }
+
+  .input-error {
+    @apply border-error focus:ring-error focus:border-error;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+    @apply bg-brand-primary text-white rounded-lg hover:bg-brand-primary-dark focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 transition-all;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-brand-primary border-2 border-brand-primary rounded-lg hover:bg-brand-primary hover:text-white focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 transition-all;
+  }
+
+  .btn-outline {
+    @apply border-2 border-brand-primary text-brand-primary rounded-lg hover:bg-brand-primary hover:text-white focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 transition-all;
+  }
+
+  /* ===== CHIPS ===== */
+  .chip {
+    @apply px-3 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-base rounded-full transition-colors;
+  }
+
+  /* ===== DROPDOWN ===== */
+  .dropdown {
+    @apply absolute z-10 w-full mt-1 bg-white border border-neutral-200 rounded-lg shadow-lg max-h-60 overflow-y-auto;
+  }
+
+  .dropdown-item {
+    @apply w-full px-3 sm:px-4 py-2 text-left text-sm sm:text-base hover:bg-brand-primary-50 text-neutral-800;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-link {
+    @apply hover:text-brand-gold-light transition-colors inline-block hover:translate-x-1 transform duration-200;
   }
 }
 

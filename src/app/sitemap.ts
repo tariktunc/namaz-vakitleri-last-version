@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${baseUrl}/namaz-vakitleri`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/iftar`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
@@ -19,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Türkiye'nin önemli şehirleri için sayfalar eklenebilir
+  // Türkiye'nin önemli şehirleri
   const majorCities = [
     'istanbul',
     'ankara',

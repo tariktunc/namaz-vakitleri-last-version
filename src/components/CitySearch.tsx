@@ -39,7 +39,7 @@ export function CitySearch() {
       .filter(([key, value]) => {
         const normalizedKey = normalizeStr(key);
         const normalizedName = normalizeStr(value.name);
-        return normalizedKey.includes(normalizedInput) || 
+        return normalizedKey.includes(normalizedInput) ||
                normalizedName.includes(normalizedInput) ||
                (key.length === 2 && key === input);
       })
@@ -65,9 +65,9 @@ export function CitySearch() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        inputRef.current && 
+        inputRef.current &&
         !inputRef.current.contains(event.target as Node) &&
-        suggestionsRef.current && 
+        suggestionsRef.current &&
         !suggestionsRef.current.contains(event.target as Node)
       ) {
         setIsFocused(false);
@@ -142,7 +142,7 @@ export function CitySearch() {
   }, [displayCity]);
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 sm:p-8 mb-4 sm:mb-8">
+    <div className="search-card">
       <form onSubmit={handleSubmit} className="mb-6 sm:mb-8 relative">
         <div className="flex flex-col gap-4 sm:gap-6">
           <div className="relative">
@@ -153,38 +153,36 @@ export function CitySearch() {
               onChange={handleInputChange}
               onFocus={handleFocus}
               placeholder="Şehir adı veya plaka kodu giriniz"
-              className={`w-full p-2.5 sm:p-3 text-sm sm:text-base border ${
-                isInputError
-                  ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                  : 'border-[#8FB3D6] focus:ring-[#1E4D7B] focus:border-[#1E4D7B]'
-              } rounded-lg focus:ring-2 text-[#2C3E50] placeholder-gray-400 transition-colors`}
+              className={`input-field p-2.5 sm:p-3 text-sm sm:text-base ${
+                isInputError ? 'input-error' : ''
+              }`}
               aria-invalid={isInputError}
               aria-describedby={errorMessage ? "error-message" : undefined}
             />
             {errorMessage && (
               <p
                 id="error-message"
-                className="absolute -bottom-5 left-0 text-xs sm:text-sm text-red-600"
+                className="absolute -bottom-5 left-0 text-xs sm:text-sm text-error"
               >
                 {errorMessage}
               </p>
             )}
             {locationError && (
-              <p className="absolute -bottom-5 left-0 text-xs sm:text-sm text-red-600">
+              <p className="absolute -bottom-5 left-0 text-xs sm:text-sm text-error">
                 {locationError}
               </p>
             )}
             {suggestions.length > 0 && isFocused && (
               <div
                 ref={suggestionsRef}
-                className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto"
+                className="dropdown"
               >
                 {suggestions.map((suggestion) => (
                   <button
                     key={suggestion.id}
                     type="button"
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className="w-full px-3 sm:px-4 py-2 text-left text-sm sm:text-base hover:bg-gray-100 text-[#2C3E50]"
+                    className="dropdown-item"
                   >
                     {suggestion.display}
                   </button>
@@ -196,10 +194,8 @@ export function CitySearch() {
             <button
               type="submit"
               disabled={isLoading}
-              className={`flex-1 p-2.5 sm:p-3 text-sm sm:text-base bg-[#1E4D7B] text-white rounded-lg transition-colors ${
-                isLoading
-                  ? 'opacity-50 cursor-not-allowed'
-                  : 'hover:bg-[#1E4D7B]/90'
+              className={`btn-primary flex-1 p-2.5 sm:p-3 text-sm sm:text-base ${
+                isLoading ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
               {isLoading ? 'Aranıyor...' : 'Ara'}
@@ -208,12 +204,11 @@ export function CitySearch() {
               type="button"
               onClick={handleDetectLocation}
               disabled={isDetecting || isLoading}
-              className={`flex items-center gap-1.5 px-3 sm:px-4 p-2.5 sm:p-3 text-sm sm:text-base border-2 border-[#1E4D7B] text-[#1E4D7B] rounded-lg transition-colors ${
-                isDetecting || isLoading
-                  ? 'opacity-50 cursor-not-allowed'
-                  : 'hover:bg-[#1E4D7B] hover:text-white'
+              className={`btn-outline flex items-center gap-1.5 px-3 sm:px-4 p-2.5 sm:p-3 text-sm sm:text-base ${
+                isDetecting || isLoading ? 'opacity-50 cursor-not-allowed' : ''
               }`}
               title="Konumumu Tespit Et"
+              aria-label="Konumumu Tespit Et"
             >
               {isDetecting ? (
                 <svg className="animate-spin h-4 w-4 sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -235,15 +230,15 @@ export function CitySearch() {
       <div className="text-center space-y-3">
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-[#8FB3D6]"></div>
+            <div className="w-full border-t border-neutral-200"></div>
           </div>
           <div className="relative flex justify-center">
-            <span className="bg-white px-3 sm:px-4 text-xs sm:text-sm font-medium text-[#1E4D7B]">
+            <span className="bg-white px-3 sm:px-4 text-xs sm:text-sm font-medium text-brand-primary">
               Popüler Şehirler
             </span>
           </div>
         </div>
-        
+
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           {suggestedCities.map((cityInfo) => (
             <button
@@ -251,10 +246,10 @@ export function CitySearch() {
               type="button"
               disabled={isLoading}
               onClick={() => handleCityClick(cityInfo)}
-              className={`px-3 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-base rounded-full transition-colors ${
+              className={`chip ${
                 selectedCity === cityInfo.id
-                  ? 'bg-[#1E4D7B] text-white hover:bg-[#1E4D7B]/90'
-                  : 'bg-[#F5F7FA] text-[#2C3E50] hover:bg-[#8FB3D6] hover:text-white'
+                  ? 'bg-brand-primary text-white hover:bg-brand-primary-dark'
+                  : 'bg-neutral-100 text-neutral-700 hover:bg-brand-primary-100 hover:text-brand-primary-dark'
               } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
               {cityInfo.display}
@@ -264,4 +259,4 @@ export function CitySearch() {
       </div>
     </div>
   );
-} 
+}
